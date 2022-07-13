@@ -15,7 +15,7 @@
     --text-dark-gray: hsl(0, 0%, 20%);
 
     /* bg colors */
-    --body-bg-color: hsl(var(--hue), 60%, 94);
+    --body-bg-color: hsl(var(--hue), 60%, 94%);
     --bg-color: hsl(var(--hue), 60%, 96%);
     --bg-white: hsl(0, 0%, 100%);
 
@@ -59,8 +59,31 @@ body{
     -webkit-text-size-adjust: 100%;
     -webkit-top-highlight-color: transparent;
 }
+a{
+    color: var(--main-color);
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+::selection{
+    color: var(--text-white);
+    background-color: var(--main-color);
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--body-bg-color);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+.page-wrapper{
+    overflow: hidden;
+}
 .container{
-    background-color: red;
+    /* background-color: red; */
     max-width: 1170px;
     margin: auto;
     padding: 0 15px;
@@ -74,4 +97,58 @@ body{
     width: 100%;
     z-index: 2;
     padding: 10px 0;
+    /* background-color: red; */
+}
+.header::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow);
+    z-index: -1;
+    transform: translateY(calc(-100% - 10px));
+    transition: transform 0.5s ease;
+}
+.header.bg-reveal::before{
+    transform: translateY(0);
+}
+.header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .logo a{
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;
+    display: block;
+    transform: scaleY(0.9);
+    letter-spacing: 2px;
+}
+.header .logo span{
+    font-size: 12px;
+    display: block;
+    font-weight: 400;
+    color: var(--text-x-dark-gray);
+    letter-spacing: 1px;
+}
+.nav li{
+    display: inline-block;
+    margin-left: 35px;
+}
+.nav a{
+    text-transform: capitalize;
+    font-size: var(--fs-md);
+    color: var(--text-x-dark-gray);
+    font-weight: 400;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3 ease;
+}
+.nav a:hover{
+    color: var(--main-color);
 }
