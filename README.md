@@ -1,6 +1,6 @@
 # Cleaning Service Website
 
-Tolmol cleaning service websites is a responsive website I built using 
+## Tolmol cleaning service websites is a responsive website I built using 
 
--- HTML 
--- CSS
+- HTML 
+- CSS
